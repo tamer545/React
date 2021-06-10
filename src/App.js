@@ -1,25 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import PlayerAPI from './API'
+import {BrowserRouter, Switch, Route, Router, NavLink, Link} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+
+    return (
+        <div>
+            <h4 className="display-4">FullRoster2019</h4>
+            <ul>
+                {PlayerAPI.all().map(p => <li>{p.name}</li>)}
+            </ul>
+
+        </div>
+    )
 }
 
-export default App;
